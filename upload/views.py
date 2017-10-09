@@ -3,7 +3,9 @@ from django.shortcuts import render
 from .forms import UploadFileForm
 from django.views.decorators.csrf import csrf_exempt
 
-#curl -L -i --form file=@audio.raw http://localhost:8000/upload/
+# curl -L -i --form file=@audio.raw http://localhost:8000/upload/
+# brew install sox --with-lame --with-flac --with-libvorbis
+# sox audiotest.flac --channels=1 --rate 16k --bits 16 audiotest.raw
 
 @csrf_exempt 
 def upload_file(request):
