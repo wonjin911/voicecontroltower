@@ -13,7 +13,7 @@ def upload_file(request):
         form = UploadFileForm(request.POST, request.FILES)
 
         name = ""
-        for filename, file in request.FILES.iteritems():
+        for filename, file in request.FILES.items():
             name = request.FILES[filename].name
         print(name)
 

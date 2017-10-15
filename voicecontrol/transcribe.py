@@ -27,8 +27,6 @@ import argparse
 import io
 # [END import_libraries]
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 
 # [START def_transcribe_file]
 def transcribe_file(speech_file):
@@ -45,7 +43,7 @@ def transcribe_file(speech_file):
 
     audio = types.RecognitionAudio(content=content)
     config = types.RecognitionConfig(
-        encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
+        encoding=enums.RecognitionConfig.AudioEncoding.AMR_WB,
         sample_rate_hertz=16000,
         language_code='ko-KR')
     # [END migration_audio_config_file]
@@ -58,6 +56,7 @@ def transcribe_file(speech_file):
         print('Transcript: {}'.format(result.alternatives[0].transcript))
     # [END migration_sync_response]
 # [END def_transcribe_file]
+    print(response.results)
     return response.results[0].alternatives[0].transcript
 
 # [START def_transcribe_gcs]
