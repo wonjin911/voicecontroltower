@@ -19,9 +19,8 @@ def upload_file(request):
 
         if form.is_valid():
             uploadfile = form.save()
-            print("file id : %d" % upload_file.file_id)
-            #uploadfile.file_id
-            return HttpResponseRedirect('/voicecontrol/'+upload_file.file_id)
+            print("file id : %d" % uploadfile.file_id)
+            return HttpResponseRedirect('/voicecontrol/%d.amr' % uploadfile.file_id)
             # TODO: Send File to STT App
             #return HttpResponse(name + ' uploaded successfully')
             #return render(request, 'voicecontrol', {'audio_file': name})
