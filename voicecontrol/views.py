@@ -10,7 +10,7 @@ from .transcribe import transcribe_file
 def stt(request, audio_file):
     if audio_file == '':
         audio_file = 'audio.raw'
-    audio_file = './media/upload/' + audio_file 
+    audio_file = './media/upload/%s.amr' % audio_file 
     print(audio_file)
 
     result = transcribe_file(audio_file)
