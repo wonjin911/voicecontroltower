@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 def get_upload_path(instance, filename):
-    return 'upload/%d.amr' % instance.file_id
+    return 'upload/%d.wav' % instance.file_id
 
 # Create your models here.
 class UploadFileModel(models.Model):
